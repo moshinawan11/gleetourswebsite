@@ -1,0 +1,656 @@
+html{
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+}
+
+.navHolder{
+    width: 100%;
+    top: 0;
+    position: fixed;
+    z-index: 100;
+}
+
+.navBarWrapper{
+    height: 100px;;
+}
+
+.navbar{
+    background-color: white;
+    color: black;
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    transition: height 0.3s;
+    box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.2), 0 4px 15px 0 rgba(0, 0, 0, 0.19);
+}
+
+.navLogo{
+    margin-left: 10px;
+    margin-top: 8px;
+    width: 250px;
+}
+
+.navLogo-img{
+    width: 250px;
+}
+
+.navWrap{
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-list{
+    list-style-type: none;
+    display: flex;
+    flex-grow: 1;
+    justify-content: center;
+    align-items: center;
+    padding-inline-start: 0px;
+}
+
+.nav-item{
+    margin: 0.5rem 2rem;
+    font-size: 1rem;
+    cursor: pointer;
+
+}
+
+.nav-item a{
+    font-family: 'Poppins', sans-serif;
+    color: black;
+    text-decoration: none;
+    font-weight: 800;
+}
+
+.nav-item a:hover{
+    color: rgb(195, 33, 33);
+}
+
+.navButtonsWrap{
+    width: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.headerBtn.bar{
+    display: none;
+}
+
+.headerBtn{
+    font-family: 'Poppins';
+    color: white;
+    background-color: inherit;
+    padding: 8px 20px;
+    border: 2px solid white;
+    cursor: pointer;
+}
+
+.navSlideDown{
+    display: none;
+}
+
+.coverDiv{
+    height: fit-content;
+    margin-bottom: 70px;
+    margin-top: -70px;
+}
+
+.coverDiv > img{
+    object-fit: cover;
+    width: 100%;
+}
+
+.toursCardsList{
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    justify-content: center;
+    align-items: center;
+}
+
+.toursCard{
+    display: flex;
+    height: 300px;
+    width: 1100px;
+    border: 0.05px solid rgb(218, 218, 218);
+    background-color: rgb(241, 241, 241);
+}
+
+.toursCard:hover{
+    box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.2), 0 4px 15px 0 rgba(0, 0, 0, 0.19);
+    transition: 0.3s;
+}
+
+.toursCardImgDiv{
+    height: 300px;
+    clip-path: polygon(0 0, 100% 0, 75% 100%, 0 100%);
+}
+
+.toursCardImgDiv > img{
+    object-fit: cover;
+    height: inherit;
+    width: 400px;
+}
+
+.toursCardImgDiv > div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 125px;
+    height: 30px;
+    background-color: rgb(195, 33, 33);
+    color: #ffffff;
+    font-size: 15px; 
+    position: relative;
+    bottom: 100px;
+    right: 0;
+}
+
+.toursCardDetailsDiv{
+    display: flex;
+    flex-direction: column;
+    flex-basis: 450px;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+
+.toursCardDetailsDiv > h1{
+    font-size: 24px;
+    color: rgb(42, 41, 41);
+    text-align: center;
+}
+
+.toursCardDetailsDiv > p{
+    font-size: 14px;
+    color: rgb(85, 81, 81)
+}
+
+.viewDetailsBtn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+    cursor: pointer;
+}
+
+.toursCardPriceDiv{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-basis: 250px;
+    gap: 30px;
+    background-color: white;
+    border-left: 0.05px solid rgb(218, 218, 218); 
+}
+
+.toursCardPriceDiv > a{
+    color: rgb(195, 33, 33);
+    font-weight: 600;
+    font-size: 17px;
+    text-decoration: none;
+}
+
+.toursCardPriceDiv > span > i{
+    font-size: 34px;
+    position: relative; 
+    top: 5px;
+}
+
+.toursCardPriceDiv > span > span{
+    font-size: 25px; 
+    display: inline; 
+    margin-left: 5px; 
+}
+
+.detailsBtn{
+    width: 150px;
+    height: 42px;
+    padding: 0px 10px;
+    border: 2px solid rgb(195, 33, 33);
+    font-family: Raleway;
+    font-weight: 600;
+    background: rgb(195, 33, 33);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+    color: white;
+    font-size: 17px;
+}
+  
+.detailsBtnTransition{
+    z-index: 2;
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+.detailsBtnTransition:after {
+    position: absolute;
+    content: " ";
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: all 0.3s ease;
+}
+.detailsBtnTransition:hover {
+    box-shadow:  4px 4px 6px 0 rgba(195,33,33,.5),
+                -4px -4px 6px 0 rgba(195, 33, 33, .2), 
+      inset -4px -4px 6px 0 rgba(195,33,33,.5),
+      inset 4px 4px 6px 0 rgba(195, 33, 33, .3);
+    color: rgb(195, 33, 33);
+}
+.detailsBtnTransition:hover:after {
+    -webkit-transform: scale(2) rotate(180deg);
+    transform: scale(2) rotate(180deg);
+    background: white;
+    box-shadow:  4px 4px 6px 0 rgba(195,33,33,.5),
+                -4px -4px 6px 0 rgba(195, 33, 33, .2), 
+      inset -4px -4px 6px 0 rgba(195,33,33,.5),
+      inset 4px 4px 6px 0 rgba(195, 33, 33, .3);
+}
+
+
+
+
+footer{
+    font-family: 'Open Sans';
+    display: flex;
+    gap: 120px;
+    height: 200px;
+    background-color: rgb(195, 33, 33);
+    color: white;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+footer > img{
+    width: 150px;
+    margin-top: -80px;
+}
+
+footer > div{
+    display: flex;
+    gap: 120px;
+    margin-top: -80px;
+}
+
+footer > div > h2:nth-of-type(1) > p:nth-of-type(2) > a:nth-of-type(1){
+    font-size: 30px; 
+    margin-right: 10px; 
+    margin-left: 30px;
+}
+
+footer > div > h2:nth-of-type(1) > p:nth-of-type(2) > a:nth-of-type(2){
+    font-size: 30px;
+}
+
+footer > div > h2:nth-of-type(2) > p:nth-of-type(2){
+    margin-left: -8px;
+
+}
+
+footer > div > h2:nth-of-type(2) > p:nth-of-type(2) > i{
+    font-size: 30px;
+    position: relative;
+    top: 4px;
+}
+
+footer > div > h2:nth-of-type(2) > p:nth-of-type(2) > span{
+    font-size: 21px; 
+    display: inline; 
+    padding: 0;
+}
+
+
+@media (max-width: 1200px){
+    .toursCard{
+        width: 900px;
+    }
+    
+    .toursCardImgDiv > img{
+        width: 350px;
+    }
+
+    .toursCardDetailsDiv{
+        flex-basis: 350px;
+    }
+    
+    .toursCardDetailsDiv > h1{
+        font-size: 20px;
+        color: rgb(42, 41, 41);
+        text-align: center;
+    }
+    
+    .toursCardDetailsDiv > p{
+        font-size: 13px;
+        color: rgb(85, 81, 81)
+    }
+
+    .toursCardPriceDiv{
+        flex-basis: 200px;
+    }
+
+    .toursCardPriceDiv > span > i{
+        font-size: 29px;    
+    }
+    
+    .toursCardPriceDiv > span > span{
+        font-size: 21px; 
+    }
+
+    .detailsBtn{
+        width: 130px;
+        height: 35px;
+        font-size: 15px;
+    }
+}
+
+
+@media (max-width: 1000px){
+    .coverDiv{
+        height: fit-content;
+        margin-bottom: 70px;
+        margin-top: -50px;
+    }
+
+    .toursCard{
+        width: 700px;
+        height: 200px;
+    }
+    
+    .toursCardImgDiv > img{
+        width: 200px;
+    }
+
+    .toursCardDetailsDiv{
+        flex-basis: 350px;
+    }
+    
+    .toursCardDetailsDiv > h1{
+        font-size: 17px;
+        color: rgb(42, 41, 41);
+        text-align: center;
+    }
+    
+    .toursCardDetailsDiv > p{
+        font-size: 11px;
+        color: rgb(85, 81, 81)
+    }
+
+    .toursCardPriceDiv{
+        flex-basis: 150px;
+    }
+
+    .toursCardPriceDiv > span > i{
+        font-size: 22px;    
+        top: 2px;
+    }
+    
+    .toursCardPriceDiv > span > span{
+        font-size: 16px; 
+        margin-left: 0;
+    }
+
+    .toursCardPriceDiv > a{
+        color: rgb(195, 33, 33);
+        font-weight: 600;
+        font-size: 13px;
+        text-decoration: none;
+    }
+
+    .detailsBtn{
+        width: 100px;
+        height: 30px;
+        font-size: 12px;
+    }
+}
+
+
+@media (max-width: 940px){
+
+    footer{
+        gap: 80px;
+    }
+    footer > div{
+        gap: 80px;
+    }
+}
+
+
+@media (max-width: 900px){
+
+    .navBarWrapper{
+        height: 65px;
+    }
+    .navbar{
+        height: 65px;
+    }
+    .navLogo{
+        width: 150px;
+    }
+    .navLogo-img{
+        width: 150px;
+    }
+    .navWrap{
+        display: none;
+    }
+    .nav-list{
+        display: none;
+    }
+    .navSlideDown{
+        display: block;
+        background-color: #ffffff;
+        max-height: 0;
+        transition: max-height 0.8s;
+    }
+    .navSlideUp{
+        display: block;
+        background-color: #ffffff;
+        max-height: 300px;
+        transition: max-height 1.3s;
+    }
+    .nav-list-slide{
+        list-style-type: none;
+        flex-direction: column;
+        display: flex;
+        flex-grow: 1;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+        padding: 0;
+        transform: translateY(-280px);
+        transition: transform 1s;
+    }
+    .nav-list-slide-visible{
+        list-style-type: none;
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+        padding: 0;
+        transform: translateY(-10px);
+    }
+    .headerBtn.bar{
+        display: block;
+        margin-right: 2rem;
+        margin-top: 1.2rem;
+        align-self: flex-start;
+        z-index: 1;
+        border-color: black;
+        padding: 2.5px 10px;
+        color: black;
+    }
+    .fa.fa-bars{
+        font-size: 17px;
+    }
+    .headerBtn.bar:hover{
+        color: rgb(195, 33, 33);
+        border-color: rgb(195, 33, 33);
+    }
+    .navButtonsWrap{
+        display: none;
+    }
+    .coverDiv{
+        height: fit-content;
+        margin-bottom: 70px;
+        margin-top: 0px;
+    }
+    .toursCard{
+        flex-direction: column;
+        height: 800px;
+        width: 450px;
+    }
+    
+    .toursCardImgDiv{
+        height: 300px;
+        clip-path: none;
+        width: inherit;
+    }
+    
+    .toursCardImgDiv > img{
+        width: inherit;
+    }
+
+    .toursCardDetailsDiv{
+        height: 250px;
+    }
+    
+    .toursCardDetailsDiv > h1{
+        font-size: 22px;
+    }
+    
+    .toursCardDetailsDiv > p{
+        font-size: 14px;
+    }
+    
+    .toursCardPriceDiv{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        flex-basis: 250px;
+    }
+    
+    .toursCardPriceDiv > a{
+        color: rgb(195, 33, 33);
+        font-weight: 600;
+        font-size: 17px;
+        text-decoration: none;
+    }
+    
+    .toursCardPriceDiv > span > i{
+        font-size: 30px;
+        top: 3px;
+    }
+    
+    .toursCardPriceDiv > span > span{
+        font-size: 23px; 
+        margin-left: 5px;
+    }
+
+    .detailsBtn{
+        width: 200px;
+        height: 38px;
+        font-size: 16px;
+    }
+
+    footer{
+        height: 400px;
+        flex-direction: column;
+        gap: 10px;
+    }
+    footer > img{   
+        margin-top: 0px;
+    }
+    footer > div{
+        gap: 100px;
+        margin-top: 0px;
+    }
+}
+
+
+@media (max-width: 600px){
+
+    footer > div{
+        gap: 70px;
+    }
+    }
+
+
+@media (max-width: 520px){
+    .toursCard{
+        height: 900px;
+        width: 380px;
+    }
+    .toursCardDetailsDiv{
+        height: 350px;
+    }
+}
+
+@media (max-width: 435px){
+    footer > div{
+        gap: 50px;
+    }
+}
+
+
+@media (max-width: 420px){
+    .toursCard{
+        height: 850px;
+        width: 320px;
+    }
+}
+
+@media (max-width: 380px){
+
+    footer > img{
+        width: 110px;
+    }
+
+    footer > div{
+        gap: 30px;
+    }
+
+    footer > div > h2:nth-of-type(1) > p:nth-of-type(1){
+        font-size: 22px;
+    }
+
+    footer > div > h2:nth-of-type(1) > p:nth-of-type(2) > a:nth-of-type(1){
+        font-size: 24px; 
+    }
+
+    footer > div > h2:nth-of-type(1) > p:nth-of-type(2) > a:nth-of-type(2){
+        font-size: 24px;
+    }
+
+    footer > div > h2:nth-of-type(2) > p:nth-of-type(1){
+        font-size: 22px;
+    }
+
+    footer > div > h2:nth-of-type(2) > p:nth-of-type(2){
+        margin-left: -5px;
+    }
+
+    footer > div > h2:nth-of-type(2) > p:nth-of-type(2) > i{
+        font-size: 24px;
+        top: 3px;
+    }
+
+    footer > div > h2:nth-of-type(2) > p:nth-of-type(2) > span{
+        font-size: 18px; 
+    }
+}

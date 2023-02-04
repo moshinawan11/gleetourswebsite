@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Admin Panel
+        </title>
+        <link rel="stylesheet" type="text/css" media="screen" href= "/public/assets/css/admin.css"/>
+        <script src="https://kit.fontawesome.com/3125f5a1ec.js" crossorigin="anonymous"></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Alice&family=DM+Serif+Text&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Yrsa:wght@300&family=Open+Sans:wght@400;500;600&family=Staatliches&family=Vidaloka&display=swap"
+            rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;500;600;700;800&display=swap" rel="stylesheet">
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+        <div class="mainDiv">
+            <div class="navigationDivWrapper">
+                <div class="navigationDiv">
+                    <div class="logoDiv">
+                        <img src="/public/assets/images/glee-logo3.png" alt="Logo">
+                    </div>
+                    <div class="linksDiv">
+                        <% if(admin) { %>
+                        <a href="/admin/logout"><p>Log Out</p></a>
+                        <% } %>
+                        <a href="/admin/messages"><h4>Messages</h4></a>
+                        <a href="/admin/view-tours"><h4>Tours</h4></a>
+                        <a href="/admin"><h4>Home</h4></a>
+                    </div>
+                </div>
+            </div>
+            <div class="navBarWrapper">
+                <nav class="navbar" id="navbar">
+                    <div class="navLogo" id="navLogo">
+                        <img class="navLogo-img" id="navLogo-img" src="/public/assets/images/glee-logo3.png" alt="logo"> </div>
+                        <div class="dropdown">
+                        <button class="headerBtn bar" id="menuBtn" onclick="myFunction()">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <div class="dropdown-content" id="dropdown-content">
+                          <a href="/admin">Home</a>
+                          <a href="/admin/view-tours">Tours</a>
+                          <a href="/admin/messages">Messages</a>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+            <div class="dataDiv">
+                <h1 style="margin-top: 100px; margin-bottom: 50px;">Welcome to Admin Panel</h1>
+                <img style="max-width: 300px; opacity: 1;" src="/public/assets/images/admin-vector.jpg" alt="Admin">
+                <p style="font-size: 18px;">Go to <a href="/" style="font-size: 18px; color: rgb(195, 33, 33);">website <i class="fas fa-arrow-right" style="font-size: 16px;"></i></a></p>
+                <% if(admin) { %>
+                    <a class="logoutBtn" href="/admin/logout"><button class="logoutBtnDiv">Log Out</button></a>
+                <% } %>
+            </div>
+        </div>
+        <script src="/public/assets/js/admin.js"></script>    
+    </body>
+</html>

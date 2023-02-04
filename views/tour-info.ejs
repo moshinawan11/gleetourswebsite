@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Admin Panel
+        </title>
+        <link rel="stylesheet" type="text/css" media="screen" href= "/public/assets/css/admin.css"/>
+        <script src="https://kit.fontawesome.com/3125f5a1ec.js" crossorigin="anonymous"></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Alice&family=DM+Serif+Text&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Yrsa:wght@300&family=Open+Sans:wght@400;500;600&family=Staatliches&family=Vidaloka&display=swap"
+            rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;500;600;700;800&display=swap" rel="stylesheet">
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+        <div class="mainDiv">
+            <div class="navigationDivWrapper">
+                <div class="navigationDiv">
+                    <div class="logoDiv">
+                        <img src="/public/assets/images/glee-logo3.png" alt="Logo">
+                    </div>
+                    <div class="linksDiv">
+                        <% if(admin) { %>
+                            <a href="/admin/logout"><p>Log Out</p></a>
+                        <% } %>
+                        <a href="/admin/messages"><h4 >Messages</h4></a>
+                        <a href="/admin/view-tours"><h4>Tours</h4></a>
+                        <a href="/admin"><h4>Home</h4></a>
+                    </div>
+                </div>
+            </div>  
+            <div class="navBarWrapper">
+                <nav class="navbar" id="navbar">
+                    <div class="navLogo" id="navLogo">
+                        <img class="navLogo-img" id="navLogo-img" src="/public/assets/images/glee-logo3.png" alt="logo"> </div>
+                        <div class="dropdown">
+                        <button class="headerBtn bar" id="menuBtn" onclick="myFunction()">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <div class="dropdown-content" id="dropdown-content">
+                          <a href="/admin">Home</a>
+                          <a href="/admin/view-tours">Tours</a>
+                          <a href="/admin/messages">Messages</a>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+            <div class="dataDiv">
+                <div class="dataHeadingDiv">
+                    <h2>Tour Info</h2>
+                    <div>
+                        <% if(!tourInfo.packageInclusion) {%>
+                            <a class="viewTopBtn" href="/admin/add-tour-details/<%=tourInfo._id%>">
+                                <button class="filledBtn">
+                                    <i class="fa fa-plus">
+                                    </i>&nbsp;&nbsp;Add Details
+                                </button>
+                            </a>
+                        <% } else{ %>
+                            <a class="viewTopBtn" href="/admin/tour-details/<%=tourInfo._id%>">
+                                <button class="filledBtn">
+                                    <i class="fa fa-eye">
+                                    </i>&nbsp;&nbsp;View Details
+                                </button>
+                            </a>
+                        <% } %>
+                        <a href="/admin/edit-tour/<%=tourInfo._id%>">
+                            <button class="filledBtn">
+                                <i class="fa fa-edit">
+                                </i>&nbsp;&nbsp;Edit 
+                            </button>
+                        </a>
+                        <form action="http://localhost:3000/admin/<%=tourInfo._id%>/delete-tour?_method=DELETE" method="POST">
+                            <button class="filledBtn">
+                                <i class="fa fa-remove">
+                                </i>&nbsp;&nbsp;Delete 
+                            </button>
+                        </form>
+                    </div>
+                </div>
+                <div class="dataDetailsDiv">
+                    <div class="dataDetailsImageDiv">
+                        <span>
+                            <img src="/public/assets/images/<%=tourInfo.image.filename%>" alt="<%=tourInfo.image.filename%>">
+                        </span>
+                    </div>
+                        <p style="font-size: 15px; color: rgb(99, 99, 99); margin-bottom: 0;">Title</p>
+                        <p style="font-size: 18px; margin-top: 5px;"><%= tourInfo.title %></p>
+                    </span>
+                    <span>
+                        <p style="font-size: 15px; color: rgb(99, 99, 99); margin-bottom: 0;">No.of days</p>
+                        <p style="font-size: 18px; margin-top: 5px;"><%= tourInfo.days %></p>
+                    </span>
+                    <span>
+                        <p style="font-size: 15px; color: rgb(99, 99, 99); margin-bottom: 0;">Description</p>
+                        <p style="font-size: 18px; margin-top: 5px;"><%= tourInfo.description %></p>
+                    </span>
+                    <% if(!tourInfo.packageInclusion) {%>
+                        <a class="viewBottomBtn" href="/admin/add-tour-details/<%=tourInfo._id%>">
+                            <button class="filledBtn">
+                                <i class="fa fa-plus">
+                                </i>&nbsp;&nbsp;Add Details
+                            </button>
+                        </a>
+                    <% } else{ %>
+                        <a class="viewBottomBtn" href="/admin/tour-details/<%=tourInfo._id%>">
+                            <button class="filledBtn">
+                                <i class="fa fa-eye">
+                                </i>&nbsp;&nbsp;View Details
+                            </button>
+                        </a>
+                    <% } %>
+                </div>
+            </div>
+        </div>
+        <script src="/public/assets/js/admin.js"></script>    
+    </body>
+</html>

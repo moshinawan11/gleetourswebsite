@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Contact - Glee Tours and Travels</title>
+    <link rel="stylesheet" type="text/css" media="screen" href= "/public/assets/css/contact-us.css"/>
+
+    <%- include('partials/head') %>
+
+    <div class="coverDiv">
+        <img id="coverDivImg" src="/public/assets/images/contact-us-header.jpg" alt="">
+    </div>
+
+    <div class="quick-contact-div">
+        <h1>Quick Contact</h1>
+        <div class="quick-contact-container">
+            <ul class="quick-contact-details">
+                <li>
+                    <div>
+                        <i class="fa fa-map-marker" aria-hidden="true"></i> 
+                    </div>
+                    <p>
+                        <strong>ADDRESS:</strong> <br>
+                        Clifton Block 2 Jason Terrace Apartment Opp. Bilawal House Clifton, Karachi
+                    </p>
+                </li>
+                <li>
+                    <div>
+                        <i class="fa fa-envelope" aria-hidden="true"></i>
+                    </div>
+                    <p>
+                        <strong>EMAIL:</strong> <br>
+                        gleetoursandtravel@gmail.com
+                    </p>
+                </li>
+                <li>
+                    <div>
+                        <i class="fa fa-mobile" aria-hidden="true"></i>
+                    </div>
+                    <p>
+                        <strong>PHONE:</strong> <br>
+                        03000233669<br>
+                        03130017515
+                    </p>
+                </li>
+            </ul>
+            <img src="/public/assets/images/contact.svg" alt="Contact">
+        </div>
+    </div>
+
+    <div style="text-align: center; color: rgb(195, 33, 33); margin-top: 70px;"><%= success %></div>
+
+    <div class="get-in-touch-div">
+        <h1>Get In Touch</h1>
+        <div class="get-in-touch-form-div">
+            <form class="get-in-touch-form" method="POST" action="http://localhost:3000/contact-us">
+                <input type="text" name="name" id="name" placeholder="Your Name">
+                <input type="number" name="phone" id="phone" placeholder="Your Contact Number">
+                <input type="email" name="email" id="email" placeholder="Your Email Address">
+                <textarea style="z-index: 1;" name="message" id="message" cols="25" rows="5" placeholder="Your Message"></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </div>
+
+    <img style="display: block;" src="/public/assets/images/wave3.svg" alt="">
+    <footer>
+        <img src="/public/assets/images/logo.png">
+        <!--<p>Copyright &#169; 2022 Glee Tours and Travels</p>-->
+        <div>
+            <h2>
+                <p>FOLLOW US</p>
+                <p>
+                    <a href="https://www.facebook.com/gleetours.pk"><i class="fab fa-facebook" style="text-decoration: none; color: white;"></i></a>
+                    <a href="https://instagram.com/gleetours.pk?igshid=YmMyMTA2M2Y="><i class="fab fa-instagram" style="text-decoration: none; color: white;"></i></a>
+                </p>
+            </h2>
+            <h2>
+                <p>CONTACT US</p>
+                <p>
+                    <i class='fa fa-phone'></i>
+                    <span>03000233669</span>
+                </p>
+            </h2>
+        </div>
+
+    </footer>
+
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js " integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo "
+        crossorigin="anonymous "></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js " integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1 "
+        crossorigin="anonymous "></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js " integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM "
+        crossorigin="anonymous "></script>
+
+    <script src="/public/assets/js/contact-us.js"></script>
+</body>
+
+</html>

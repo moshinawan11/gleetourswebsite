@@ -71,8 +71,8 @@ app.use((err, req, res, next) => {
 res.render("Error404Page.ejs");
 })
 
-const port = process.env.PORT || "3000";
+const PORT = process.env.PORT || "3000";
 
-app.listen(port, () => {
-    console.log(`SERVING ON PORT ${port}!!!`);   
+app.listen(PORT, () => {
+    console.log(`SERVING ON PORT ${PORT}!!!`);   
 })

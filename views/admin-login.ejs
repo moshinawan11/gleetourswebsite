@@ -34,7 +34,7 @@
         <div class="main-div">
             <img src="/public/assets/images/admin-vector.jpg" alt="Admin">
             <h3>Admin Panel</h3>
-            <form class="login-form" action="http://localhost:3000/admin/login" method="post">
+            <form class="login-form" action="<%=process.env.BASE_URL%>/admin/login" method="post">
                 <input type="text" name="username" id="username" placeholder="Username">
                 <input type="password" name="password" id="password" placeholder="Password">
                 <button type="submit">Login</button>

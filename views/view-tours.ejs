@@ -81,7 +81,7 @@
                             <td id="td2"><a href="/admin/view-tours/<%=tour._id%>"><button class="unfilledBtn">Info</button></a></td>
                             <td id="td3"><a href="/admin/edit-tour/<%=tour._id%>"><button class="unfilledBtn">Edit</button></a></td>
                             <td id="td4">
-                                <form action="http://localhost:3000/admin/<%=tour._id%>/delete-tour?_method=DELETE" method="POST">
+                                <form action="<%=process.env.BASE_URL%>/admin/<%=tour._id%>/delete-tour?_method=DELETE" method="POST">
                                     <button class="unfilledBtn">Delete</button>
                                 </form>
                             </td>

@@ -71,7 +71,7 @@
                             <td><p style="font-size: 18px;"> <%= message.name %> </p></td>
                             <td><a href="/admin/messages/<%=message._id%>"><button class="unfilledBtn">View</button></a></td>
                             <td>
-                                <form action="http://localhost:3000/admin/messages/<%=message._id%>?_method=DELETE" method="POST">
+                                <form action="<%=process.env.BASE_URL%>/admin/messages/<%=message._id%>?_method=DELETE" method="POST">
                                     <button class="unfilledBtn">Delete</button>
                                 </form>
                             </td>

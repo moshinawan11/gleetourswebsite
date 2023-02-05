@@ -13,6 +13,7 @@ const Admin = require("./models/admin");
 const session = require("express-session");
 const flash = require("connect-flash");
 const MongoStore = require("connect-mongo");
+const favicon = require('serve-favicon');
 
 // mongodb+srv://mohsinawan512:<password>@cluster0.xzp8q0n.mongodb.net/?retryWrites=true&w=majority
 const dbURL = process.env.DB_URL || "mongodb://localhost:27017/gleeWebsite";
@@ -27,6 +28,7 @@ db.once("open", () => {
 app.set('view engine','ejs');
 app.set("views", path.join(__dirname, "/views"));
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(favicon(path.join(__dirname, 'public', 'assets', 'images', 'favicon.png')));
 app.use("/public", express.static(path.join(__dirname, 'public')));
 app.use(methodOverride("_method"));
 

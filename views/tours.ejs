@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Tours - Glee Tours and Travels</title>
+    <link rel="stylesheet" type="text/css" media="screen" href= "/public/assets/css/tours.css"/>
+
+    <%- include('partials/head') %>
+
+    <div class="coverDiv">
+        <img id="coverDivImg" src="/public/assets/images/tours-header.avif" alt="">
+    </div>
+    <div class="toursCardsList">
+        <% tours.reverse() %>
+        <% for(let tour of tours) { %>
+        <div class="toursCard">
+            <div class="toursCardImgDiv">
+                <img src="/public/assets/images/<%=tour.image.filename%>" alt="">
+                <div><%= tour.days %> <% if( tour.days > 1 ) { %> Days Tour <% } else{ %> Day Tour <% } %></div>
+            </div>
+            <div class="toursCardDetailsDiv">
+                <h1> <%= tour.title %> </h1>
+                <p>
+                    <%= tour.description %>
+                </p>
+            </div>
+            <div class="toursCardPriceDiv">
+                <span>
+                    <i class='fa fa-phone'></i>
+                    <span>03000233669</span>
+                </span>
+                <% if(tour.packageInclusion) { %>
+                <a href="/tour-details/<%=tour._id%>">
+                    <span>View Details</span>
+                </a>
+                <% } %>
+                <div>
+                    <a href="/contact-us"><button class="detailsBtn detailsBtnTransition">Book Now</button></a>
+                </div>
+            </div>
+        </div>
+        <% } %>
+    </div>
+
+    <img style="display: block;" src="/public/assets/images/wave3.svg" alt="">
+    <footer>
+        <img src="/public/assets/images/logo.avif">
+        <!--<p>Copyright &#169; 2022 Glee Tours and Travels</p>-->
+        <div>
+            <h2>
+                <p>FOLLOW US</p>
+                <p>
+                    <a href="https://www.facebook.com/gleetours.pk"><i class="fab fa-facebook" style="text-decoration: none; color: white;"></i></a>
+                    <a href="https://instagram.com/gleetours.pk?igshid=YmMyMTA2M2Y="><i class="fab fa-instagram" style="text-decoration: none; color: white;"></i></a>
+                </p>
+            </h2>
+            <h2>
+                <p>CONTACT US</p>
+                <p>
+                    <i class='fa fa-phone'></i>
+                    <span>03000233669</span>
+                </p>
+            </h2>
+        </div>
+
+    </footer>
+    
+    <script src="/public/assets/js/tours.js"></script>
+
+</body>
+
+</html>

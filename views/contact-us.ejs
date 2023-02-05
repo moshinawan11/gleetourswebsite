@@ -53,7 +53,7 @@
     <div class="get-in-touch-div">
         <h1>Get In Touch</h1>
         <div class="get-in-touch-form-div">
-            <form class="get-in-touch-form" method="POST" action="http://localhost:3000/contact-us">
+            <form class="get-in-touch-form" method="POST" action="<%=process.env.BASE_URL%>/contact-us">
                 <input type="text" name="name" id="name" placeholder="Your Name">
                 <input type="number" name="phone" id="phone" placeholder="Your Contact Number">
                 <input type="email" name="email" id="email" placeholder="Your Email Address">

@@ -65,7 +65,7 @@
                     <h2>Add Tour Details</h2>
                 </div>
                 <div class="dataDetailsDiv">
-                <form class="tourForm" action="http://localhost:3000/admin/add-tour-details" method="POST" enctype="multipart/form-data">
+                <form class="tourForm" action="<%=process.env.BASE_URL%>/admin/add-tour-details" method="POST" enctype="multipart/form-data">
                         <label for="title">Tour Title</label>
                         <input type="text" name="title" id="title" required>
                         <label for="days">No. of days</label>

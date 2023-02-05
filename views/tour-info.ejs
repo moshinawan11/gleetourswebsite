@@ -85,7 +85,7 @@
                                 </i>&nbsp;&nbsp;Edit 
                             </button>
                         </a>
-                        <form action="http://localhost:3000/admin/<%=tourInfo._id%>/delete-tour?_method=DELETE" method="POST">
+                        <form action="<%=process.env.BASE_URL%>/admin/<%=tourInfo._id%>/delete-tour?_method=DELETE" method="POST">
                             <button class="filledBtn">
                                 <i class="fa fa-remove">
                                 </i>&nbsp;&nbsp;Delete 
